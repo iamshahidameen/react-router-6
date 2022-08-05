@@ -1,12 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Products from './pages/Products';
+import Error from './pages/Error';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<h2>React Router 6 Tutorial</h2>} />
-        <Route path="/about" element={<h2>About</h2>} />
-        <Route path="/test" element={<h2>This is test</h2>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="products" element={<Products />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
