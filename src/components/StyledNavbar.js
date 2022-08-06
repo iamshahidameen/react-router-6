@@ -8,8 +8,8 @@ const StyledNavbar = () => {
         to="/"
         style={({ isActive }) => {
           return {
-            color: isActive ? 'yellow' : 'green',
-            fontSize: isActive ? '16px' : '24px',
+            color: isActive ? 'red' : 'green',
+            fontSize: isActive ? '32px' : '24px',
           };
         }}
       >
@@ -23,9 +23,7 @@ const StyledNavbar = () => {
       </NavLink>
       <NavLink
         to="/products"
-        className={({ isActive }) => {
-          isActive ? 'link active' : 'link';
-        }}
+        className={({ isActive }) => (isActive ? 'link active' : 'link')}
       >
         Products
       </NavLink>
