@@ -7,6 +7,7 @@ import Error from './pages/Error';
 import SharedLayout from './pages/SharedLayout';
 import SingleProduct from './pages/SingleProduct';
 import Login from './pages/Login';
+import ProtectedRoute from './pages/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 
 function App() {
@@ -21,7 +22,14 @@ function App() {
           <Route path="*" element={<Error />} />
           <Route path="products/:productID" element={<SingleProduct />} />
           <Route path="login" element={<Login setUser={setUser} />} />
-          <Route path="dashboard" element={<Dashboard user={user} />} />
+          <Route
+            path="dashboard"
+            element={
+              <ProtectedRoute user={user}>
+                <Dashboard user={user} />
+              </ProtectedRoute>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
